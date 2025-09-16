@@ -148,36 +148,9 @@ POST /api/sessions/{sessionId}/complete
 }
 ```
 
-## Features Implemented
-
-✅ **JWT Authentication** with role-based authorization  
-✅ **Vertical Slice Architecture** without MediatR  
-✅ **Request/Response Pattern** (no DTOs)  
-✅ **PostgreSQL Integration** with Entity Framework Core  
-✅ **Repository Pattern** with interfaces in domain layer  
-✅ **Docker Containerization** with PostgreSQL  
-✅ **Memory Caching** for exercise library  
-✅ **Personal Record Detection** in workout completion  
-✅ **Real-time Workout Tracking** with set management  
-✅ **Clean Architecture** separation of concerns  
-
 ## Security
 
 - JWT tokens with configurable expiration
 - Password hashing with BCrypt
 - Role-based authorization (User/Admin)
 - HTTPS support in production
-
-## Development
-
-The application follows Clean Architecture principles with vertical slice organization. Each feature is self-contained within its own folder structure, making it easy to maintain and extend.
-
-### Adding New Features
-
-1. Create feature folder in `Olympo.Application/Features/`
-2. Define Request/Response models
-3. Create handler class
-4. Register handler in `Program.cs`
-5. Add API endpoint mapping
-
-This project demonstrates modern .NET development practices with clean separation of concerns and production-ready architecture.
