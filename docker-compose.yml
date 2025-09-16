@@ -1,0 +1,39 @@
+﻿version: '3.8'
+
+services:
+  olympo-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: olympo-api
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080;https://+:8081
+    depends_on:
+      - olympo-db
+    networks:
+      - olympo-network
+
+  olympo-db:
+    image: postgres:15
+    container_name: olympo-db
+    environment:
+      - POSTGRES_DB=olympo
+      - POSTGRES_USER=olympo
+      - POSTGRES_PASSWORD=olympo123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - olympo-network
+
+volumes:
+  postgres_data:
+
+networks:
+  olympo-network:
+    driver: bridge
