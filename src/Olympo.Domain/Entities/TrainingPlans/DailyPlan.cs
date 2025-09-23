@@ -9,6 +9,8 @@ public class DailyPlan : Entity
     public int DayNumber { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Notes { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt { get; set; }
 
     public WeeklyPlan WeeklyPlan { get; set; } = null!;
     public ICollection<Workout> Workouts { get; set; } = [];

@@ -2,7 +2,8 @@ namespace Olympo.Domain.Entities.Users;
 
 public enum FitnessLevel
 {
-    Beginner = 0,
-    Intermediate = 1,
-    Advanced = 2
+    Unknown = 0,
+    Beginner = 1,
+    Intermediate = 2,
+    Advanced = 3
 }

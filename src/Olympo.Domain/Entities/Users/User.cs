@@ -11,12 +11,15 @@ public class User : Entity
     public string PasswordHash { get; set; } = string.Empty;
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
+    public DateTime? DateOfBirth { get; set; }
     public decimal? Weight { get; set; }
     public decimal? Height { get; set; }
-    public FitnessLevel? FitnessLevel { get; set; }
+    public FitnessLevel FitnessLevel { get; set; } = FitnessLevel.Unknown;
     public UserRole Role { get; set; } = UserRole.User;
+    public bool IsActive { get; set; } = true;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
+    public DateTime? LastLoginAt { get; set; }
 
     public ICollection<UserTrainingPlan> UserTrainingPlans { get; set; } = [];
     public ICollection<WorkoutSession> WorkoutSessions { get; set; } = [];
